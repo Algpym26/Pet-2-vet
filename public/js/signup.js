@@ -23,7 +23,7 @@ const signupFormHandler = async (event) => {
   }
 };
 
-async function email() {
+async function sendEmail() {
   // Generate test SMTP service account from ethereal.email
   // Only needed if you don't have a real mail account for testing
   let testAccount = await nodemailer.createTestAccount();
@@ -41,11 +41,11 @@ async function email() {
 
   // send mail with defined transport object
   let info = await transporter.sendMail({
-    from: '"Katie" <KT@example.com>', // sender address
-    to: "abc@example.com", // list of receivers
-    subject: "Hello ✔", // Subject line
-    text: "Hello world?", // plain text body
-    html: "<b>Hello world?</b>", // html body
+    from: '"The Vets" <Pet2Vet@example.com>', // sender address
+    to: `${email}`, // list of receivers
+    subject: `Hi, ${name} Welcome to Pet2Vet!`, // Subject line
+    text: `Hi, ${name} Welcome to Pet2Vet!`, // plain text body
+    html: `<b>Hi, ${name} Welcome to Pet2Vet!</b>`, // html body
   });
 
   console.log("Message sent: %s", info.messageId);
@@ -59,4 +59,6 @@ document
   .querySelector(".signup-form")
   .addEventListener("submit", signupFormHandler);
 
-email().catch(console.error);
+sendEmail().catch(console.error);
+
+// NOTE TO SELF: Ensure <script src="./js/signup.js"></script> at end of signup.handlebars file
