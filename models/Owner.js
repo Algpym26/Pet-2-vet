@@ -15,7 +15,7 @@ Owner.init(
         },
 
         name: {
-            type: DataTypes.VARCHAR,
+            type: DataTypes.STRING,
             allowNull: false,
         }
 

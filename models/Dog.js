@@ -14,12 +14,12 @@ Dog.init(
         },
 
         name: {
-            type: DataTypes.VARCHAR,
+            type: DataTypes.STRING,
             allowNull: false,
         },
 
         size: {
-            type: DataTypes.VARCHAR,
+            type: DataTypes.STRING,
             allowNull: false
 
         },
@@ -33,12 +33,13 @@ Dog.init(
         weight: {
             type: DataTypes.DECIMAL,
             allowNull: false
-        }
+        },
 
     },
 
     {
         sequelize,
+        bcrypt,
         timestamps: false,
         freezeTableName: true,
         underscored: true,
