@@ -1,0 +1,16 @@
+[
+    {
+        "name": "Brina",
+        "size": "small",
+        "age": 7,
+        "weight": 25.00
+    },
+
+    {
+        "name": "Missy",
+        "size": "large",
+        "age": 10,
+        "weight": 45
+    }
+
+]
