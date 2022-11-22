@@ -14,12 +14,12 @@ Dog.init(
         },
 
         name: {
-            type: DataTypes.VARCHAR,
+            type: DataTypes.STRING,
             allowNull: false,
         },
 
         size: {
-            type: DataTypes.VARCHAR,
+            type: DataTypes.STRING,
             allowNull: false
 
         },
