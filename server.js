@@ -31,6 +31,7 @@ const sess = {
   };
   
 app.use(session(sess));
+app.use(express.static("assets"))
 
 //Telling Express to use Handlebars template
 app.engine('handlebars', hbs.engine);
