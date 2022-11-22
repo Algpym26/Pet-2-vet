@@ -33,12 +33,22 @@ Dog.init(
         weight: {
             type: DataTypes.DECIMAL,
             allowNull: false
+        },
+
+        pet_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'Owner',
+                key: 'id'
+
+            }
         }
 
     },
 
     {
         sequelize,
+        bcrypt,
         timestamps: false,
         freezeTableName: true,
         underscored: true,
