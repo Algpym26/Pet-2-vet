@@ -23,6 +23,7 @@ Owner.init(
 
     {
         sequelize,
+        bcrypt,
         timestamps: false,
         freezeTableName: true,
         underscored: true,

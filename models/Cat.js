@@ -38,7 +38,16 @@ Cat.init(
         weight: {
             type: DataTypes.DECIMAL,
             allowNull: false
-        }
+        },
+
+        pet_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'Owner',
+                key: 'id'
+                
+            },
+        },
 
     },
 

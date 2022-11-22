@@ -1,10 +1,9 @@
-const sequelize = require('../config/connection');
-const { Cat, Dog, Owner } = require('../models');
+const sequelize = require("../config/connection");
+const { Cat, Dog, Owner } = require("../models");
 
-const catData = require('./catData.json');
-const dogData = require('./dogData.json');
-const ownerData = require('./ownerData.json');
-
+const catData = require("./catData.json");
+const dogData = require("./dogData.json");
+const ownerData = require("./ownerData.json");
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -17,14 +16,7 @@ const seedDatabase = async () => {
   for (const cat of catData) {
     await Cat.create({
       ...cat,
-      pet_id: owners[Math.floor(Math.random() * owners.length)].id,
-    });
-  }
-
-  for (const dog of dogData) {
-    await Dog.create({
-      ...dog,
-      pet_id: owners[Math.floor(Math.random() * owners.length)].id,
+      user_id: owners[Math.floor(Math.random() * owners.length)].id,
     });
   }
 
