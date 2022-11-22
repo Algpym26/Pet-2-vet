@@ -11,6 +11,9 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+const hbs = exphbs.create({ helpers });
+
+
 //ENV file needed for secret
 const sess = {
     secret: process.env.SECRET,
@@ -28,6 +31,7 @@ const sess = {
   };
   
 app.use(session(sess));
+app.use(express.static("assets"))
 
 //Telling Express to use Handlebars template
 app.engine('handlebars', hbs.engine);

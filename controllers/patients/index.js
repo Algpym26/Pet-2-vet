@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const patientRoutes = require("./patientsPage");
+const patientRoutes = require("./patientRoutes");
 const catRoutes = require("./catRoutes");
 const dogRoutes = require("./dogRoutes");
 
