@@ -1,6 +1,6 @@
-const Dog = require('./Dog')
-const Cat = require('./Cat')
-const Owner = require('./Owner')
+const Dog = require("./Dog");
+const Cat = require("./Cat");
+const Owner = require("./Owner");
 
 // Owner has many Dog
 // Owner has many Cat
@@ -8,22 +8,21 @@ const Owner = require('./Owner')
 // Cat belongsTo Owner
 
 Owner.hasMany(Dog, {
-    foreignKey: 'pet_id',
-    onDelete: 'CASCADE'
-})
+  foreignKey: "owner_id",
+  onDelete: "CASCADE",
+});
 
 Owner.hasMany(Cat, {
-    foreignKey: 'pet_id',
-    onDelete: 'CASCADE'
-
-})
+  foreignKey: "owner_id",
+  onDelete: "CASCADE",
+});
 
 Dog.belongsTo(Owner, {
-    foreignKey: 'pet_id'
-})
+  foreignKey: "owner_id",
+});
 
 Cat.belongsTo(Owner, {
-    foreignKey: 'pet_id'
-})
+  foreignKey: "owner_id",
+});
 
 module.exports = { Dog, Cat, Owner };

@@ -1,11 +1,13 @@
 [
-    {
-        "name": "John"
+  {
+    "name": "John",
+    "email": "fakejohn@aol.com",
+    "password": "password12345"
+  },
 
-    },
-
-    {
-        "name": "Cyndi"
-    }
-
+  {
+    "name": "Cyndi",
+    "email": "fakecyndi@aol.com",
+    "password": "password12345"
+  }
 ]
