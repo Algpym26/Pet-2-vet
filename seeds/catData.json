@@ -1,16 +1,17 @@
 [
-    {
-        "name": "Cormac",
-        "Declawed": false,
-        "age": 7,
-        "weight": 14.5
+  {
+    "name": "Cormac",
+    "Declawed": false,
+    "age": 7,
+    "weight": 14.5,
+    "owner_id": 1
+  },
 
-    },
-
-    {
-        "name": "Pynchon",
-        "Declawed": true,
-        "age": 8,
-        "weight": 16.0
-    }
+  {
+    "name": "Pynchon",
+    "Declawed": true,
+    "age": 8,
+    "weight": 16.0,
+    "owner_id": 2
+  }
 ]

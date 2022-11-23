@@ -1,16 +1,17 @@
 [
-    {
-        "name": "Brina",
-        "size": "small",
-        "age": 7,
-        "weight": 25.00
-    },
+  {
+    "name": "Brina",
+    "size": "small",
+    "age": 7,
+    "weight": 25.0,
+    "owner_id": 1
+  },
 
-    {
-        "name": "Missy",
-        "size": "large",
-        "age": 10,
-        "weight": 45
-    }
-
+  {
+    "name": "Missy",
+    "size": "large",
+    "age": 10,
+    "weight": 45,
+    "owner_id": 2
+  }
 ]

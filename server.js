@@ -15,7 +15,7 @@ const hbs = exphbs.create({ helpers });
 
 //ENV file needed for secret
 const sess = {
-  secret: "process.env.SECRET",
+  secret: process.env.SECRET,
   cookie: {
     maxAge: 300000,
     httpOnly: true,
