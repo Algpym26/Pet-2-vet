@@ -2,7 +2,11 @@ const { Model, DataTypes } = require("sequelize");
 const bcrypt = require("bcrypt");
 const sequelize = require("../config/connection");
 
-class Owner extends Model {}
+class Owner extends Model {
+  checkPassword(loginPw) {
+    return bcrypt.compareSync(loginPw, this.password);
+  }
+}
 
 Owner.init(
   {
@@ -52,7 +56,7 @@ Owner.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "Owner",
+    modelName: "owner",
   }
 );
 
