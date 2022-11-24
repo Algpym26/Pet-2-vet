@@ -5,7 +5,7 @@
       elit. Quibusdam eos laudantium dolores! Atque et commodi tempore in ipsum
       quos sit iusto? Veritatis perspiciatis dolore obcaecati, accusamus
       assumenda earum a quam.</p>
-      <p>Need to update a pet's information? Click below.</p>
+    <p>Need to update a pet's information? Click below.</p>
     <button class="btn btn-secondary btn-lg" type="button">Add a Pet</button>
     <button class="btn btn-secondary btn-lg" type="button">Update a Pet</button>
     <button class="btn btn-secondary btn-lg" type="button">Delete a Pet</button>
@@ -15,42 +15,35 @@
 
 <div class="container-fluid">
   <div class="row row-cols-1 row-cols-md-2 g-4">
-    <div class="col">
-      <div class="card">
-        <img src="image.JPG" class="card-img-top" alt="..." />
-        <div class="card-body">
-          <h5 class="card-title">Pet</h5>
-          <p class="card-text">Pet information goes here.</p>
+    {{! if each to loop over dogs }}
+    {{#if dogs.length}}
+      <h3>My Dogs:</h3>
+      {{#each dogs as |dog|}}
+        <div class="col">
+          <div class="card">
+            <img src="catimg3.jpeg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">My Dog {{dog.name}}</h5>
+              <p class="card-text">Pet information goes here. </p>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card">
-        <img src="image.JPG" class="card-img-top" alt="..." />
-        <div class="card-body">
-          <h5 class="card-title">Pet</h5>
-          <p class="card-text">Pet information goes here.</p>
+      {{/each}}
+    {{/if}}
+    {{! if each to loop over cats }}
+    {{#if cats.length}}
+      <h3>My Cats:</h3>
+      {{#each cats as |cat|}}
+        <div class="col">
+          <div class="card">
+            <img src="image.JPG" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">My Cat {{cat.name}}</h5>
+              <p class="card-text">Pet information goes here.</p>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card">
-        <img src="image.JPG" class="card-img-top" alt="..." />
-        <div class="card-body">
-          <h5 class="card-title">Pet</h5>
-          <p class="card-text">This is a longer card with supporting text below
-            as a natural lead-in to additional content.</p>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card">
-        <img src="image.JPG" class="card-img-top" alt="..." />
-        <div class="card-body">
-          <h5 class="card-title">Pet</h5>
-          <p class="card-text">Pet information goes here.</p>
-        </div>
-      </div>
-    </div>
+      {{/each}}
+    {{/if}}
   </div>
 </div>
