@@ -16,16 +16,16 @@ router.get("/login", async (req, res) => {
 
 router.post("/login", async (req, res) => {
   try {
-    const userData = await Owner.findOne({ where: { email: req.body.email } });
+    const ownerData = await Owner.findOne({ where: { email: req.body.email } });
 
-    if (!userData) {
+    if (!ownerData) {
       res
         .status(400)
         .json({ message: "Incorrect email or password, please try again" });
       return;
     }
 
-    const validPassword = await userData.checkPassword(req.body.password);
+    const validPassword = await ownerData.checkPassword(req.body.password);
 
     if (!validPassword) {
       res
@@ -35,10 +35,11 @@ router.post("/login", async (req, res) => {
     }
 
     req.session.save(() => {
-      req.session.user_id = userData.id;
+      console.log(req.session);
+      req.session.user_id = ownerData.id;
       req.session.logged_in = true;
 
-      res.json({ user: userData, message: "You are now logged in!" });
+      res.json({ user: ownerData, message: "You are now logged in!" });
     });
   } catch (err) {
     res.status(400).json(err);
@@ -47,13 +48,26 @@ router.post("/login", async (req, res) => {
 
 router.post("/signup", async (req, res) => {
   try {
+    const ownerEmail = await Owner.findOne({
+      where: { email: req.body.email },
+    });
+
+    if (ownerEmail) {
+      console.log("owner email found already");
+      res
+        .status(400)
+        .json({ message: "An account with this email exists already." });
+      return;
+    }
+
     const ownerData = await Owner.create(req.body);
 
     req.session.save(() => {
+      console.log(req.session);
       req.session.owner_id = ownerData.id;
       req.session.logged_in = true;
 
-      res.status(200).json(userData);
+      res.status(200).json(ownerData);
     });
   } catch (err) {
     res.status(400).json(err);

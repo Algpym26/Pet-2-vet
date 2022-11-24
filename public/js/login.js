@@ -34,6 +34,7 @@ const signUpFormHandler = async (event) => {
       body: JSON.stringify({ email, password }),
       headers: { "Content-Type": "application/json" },
     });
+    console.log("fetch request firing in login.js")
 
     if (response.ok) {
       // If successful, redirect the browser to the profile page
