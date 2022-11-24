@@ -45,6 +45,21 @@ router.post("/login", async (req, res) => {
   }
 });
 
+router.post("/signup", async (req, res) => {
+  try {
+    const ownerData = await Owner.create(req.body);
+
+    req.session.save(() => {
+      req.session.owner_id = ownerData.id;
+      req.session.logged_in = true;
+
+      res.status(200).json(userData);
+    });
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
 router.post("/logout", (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {
