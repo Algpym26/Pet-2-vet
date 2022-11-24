@@ -22,6 +22,12 @@ const loginFormHandler = async (event) => {
   }
 };
 
+const signUpFormHandler = async (event) => {
+  const name = document.querySelector("#name-signup").value.trim();
+  const email = document.querySelector("#email-signup").value.trim();
+  const password = document.querySelector("#password-signup").value.trim();
+};
+
 document
-  .querySelector(".login-form")
+  .querySelector("#login-button")
   .addEventListener("submit", loginFormHandler);
