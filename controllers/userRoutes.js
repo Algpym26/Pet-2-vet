@@ -16,8 +16,9 @@ router.get("/login", async (req, res) => {
 
 router.post("/login", async (req, res) => {
   try {
+    console.log(req.body);
     const ownerData = await Owner.findOne({ where: { email: req.body.email } });
-
+    console.log(ownerData)
     if (!ownerData) {
       res
         .status(400)
@@ -47,21 +48,25 @@ router.post("/login", async (req, res) => {
 });
 
 router.post("/signup", async (req, res) => {
+  console.log("signup post request working");
   try {
-    const ownerEmail = await Owner.findOne({
-      where: { email: req.body.email },
-    });
+    // const ownerEmail = await Owner.findOne({
+    //   where: { email: req.body.email },
+    // });
+    // console.log(ownerEmail)
 
-    if (ownerEmail) {
-      console.log("owner email found already");
-      res
-        .status(400)
-        .json({ message: "An account with this email exists already." });
-      return;
-    }
-
+    // if (ownerEmail) {
+    //   console.log("owner email found already");
+    //   res
+    //     .status(400)
+    //     .json({ message: "An account with this email exists already." });
+    //   return;
+    // } else {
+    //   console.log("email not found, go ahead with sign up");
+    // }
+    console.log(req.body);
     const ownerData = await Owner.create(req.body);
-
+    console.log(ownerData);
     req.session.save(() => {
       console.log(req.session);
       req.session.owner_id = ownerData.id;
