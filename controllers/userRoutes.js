@@ -8,6 +8,12 @@ router.get("/", async (req, res) => {
   } catch (err) {}
 });
 
+router.get("/login", async (req, res) => {
+  try {
+    res.render("loginPage");
+  } catch (err) {}
+});
+
 router.post("/login", async (req, res) => {
   try {
     const userData = await Owner.findOne({ where: { email: req.body.email } });
