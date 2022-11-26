@@ -1,6 +1,6 @@
+const Owner = require("./Owner");
 const Dog = require("./Dog");
 const Cat = require("./Cat");
-const Owner = require("./Owner");
 
 // Owner has many Dog
 // Owner has many Cat
