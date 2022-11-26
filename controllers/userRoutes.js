@@ -2,23 +2,28 @@ const router = require("express").Router();
 const withAuth = require("../utils/auth");
 const { Owner } = require("../models/");
 
+// tested successfully KT
 router.get("/", async (req, res) => {
   try {
-    res.render("homepage");
+    res.render("homepage", { logged_in: req.session.logged_in });
   } catch (err) {}
 });
 
+// tested successfully KT
 router.get("/login", async (req, res) => {
-  try {
-    res.render("loginPage");
-  } catch (err) {}
+  if (req.session.logged_in) {
+    res.redirect("/");
+    return;
+  }
+  res.render("loginPage");
 });
 
+//tested successfully KT
 router.post("/login", async (req, res) => {
   try {
     console.log(req.body);
     const ownerData = await Owner.findOne({ where: { email: req.body.email } });
-    console.log(ownerData)
+    console.log(ownerData);
     if (!ownerData) {
       res
         .status(400)
