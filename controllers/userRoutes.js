@@ -2,23 +2,36 @@ const router = require("express").Router();
 const withAuth = require("../utils/auth");
 const { Owner } = require("../models/");
 
-router.get("/", async (req, res) => {
+router.get("/", withAuth, async (req, res) => {
   try {
+    console.log(req.session.logged_in);
     res.render("homepage");
-  } catch (err) {}
+  } catch (err) {
+    res.json(err);
+  }
+});
+
+router.get("/locations", withAuth, async (req, res) => {
+  try {
+    res.render("locationPage");
+  } catch (err) {
+    res.json(err);
+  }
 });
 
 router.get("/login", async (req, res) => {
   try {
     res.render("loginPage");
-  } catch (err) {}
+  } catch (err) {
+    res.json(err);
+  }
 });
 
 router.post("/login", async (req, res) => {
   try {
     console.log(req.body);
     const ownerData = await Owner.findOne({ where: { email: req.body.email } });
-    console.log(ownerData)
+    console.log(ownerData);
     if (!ownerData) {
       res
         .status(400)
@@ -68,7 +81,7 @@ router.post("/signup", async (req, res) => {
     const ownerData = await Owner.create(req.body);
     console.log(ownerData);
     req.session.save(() => {
-      console.log(req.session);
+      console.log("session saving");
       req.session.owner_id = ownerData.id;
       req.session.logged_in = true;
 
@@ -80,9 +93,11 @@ router.post("/signup", async (req, res) => {
 });
 
 router.post("/logout", (req, res) => {
+  console.log(req.session.logged_in);
   if (req.session.logged_in) {
     req.session.destroy(() => {
-      res.status(204).end();
+      console.log("test");
+      res.status(200).end();
     });
   } else {
     res.status(404).end();
