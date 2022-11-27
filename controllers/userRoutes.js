@@ -4,20 +4,27 @@ const { Owner } = require("../models/");
 
 router.get("/", withAuth, async (req, res) => {
   try {
+    console.log(req.session.logged_in);
     res.render("homepage");
-  } catch (err) {}
+  } catch (err) {
+    res.json(err);
+  }
 });
 
 router.get("/locations", withAuth, async (req, res) => {
   try {
     res.render("locationPage");
-  } catch (err) {}
+  } catch (err) {
+    res.json(err);
+  }
 });
 
 router.get("/login", async (req, res) => {
   try {
     res.render("loginPage");
-  } catch (err) {}
+  } catch (err) {
+    res.json(err);
+  }
 });
 
 router.post("/login", async (req, res) => {
@@ -86,9 +93,11 @@ router.post("/signup", async (req, res) => {
 });
 
 router.post("/logout", (req, res) => {
+  console.log(req.session.logged_in);
   if (req.session.logged_in) {
     req.session.destroy(() => {
-      res.status(204).end();
+      console.log("test");
+      res.status(200).end();
     });
   } else {
     res.status(404).end();
