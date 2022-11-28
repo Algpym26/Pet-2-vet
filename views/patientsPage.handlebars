@@ -15,13 +15,13 @@
 
 <div class="container-fluid">
   <div class="row row-cols-1 row-cols-md-2 g-4">
-    {{! if each to loop over dogs }}
+    {{! if each to loop over all dogs for logged in owner }}
     {{#if dogs.length}}
       <h3>My Dogs:</h3>
       {{#each dogs as |dog|}}
         <div class="col">
           <div class="card">
-            <img src="catimg3.jpeg" class="card-img-top" alt="..." />
+            <img src="/assets/image.JPG" class="card-img-top" alt="..." />
             <div class="card-body">
               <h5 class="card-title">My Dog {{dog.name}}</h5>
               <p class="card-text">Pet information goes here. </p>
@@ -30,16 +30,21 @@
         </div>
       {{/each}}
     {{/if}}
-    {{! if each to loop over cats }}
+    {{! if each to loop over all cats for logged in owner }}
     {{#if cats.length}}
       <h3>My Cats:</h3>
       {{#each cats as |cat|}}
         <div class="col">
           <div class="card">
-            <img src="image.JPG" class="card-img-top" alt="..." />
+            <img src="/assets/catimg3.jpeg" class="card-img-top" alt="..." />
             <div class="card-body">
               <h5 class="card-title">My Cat {{cat.name}}</h5>
-              <p class="card-text">Pet information goes here.</p>
+              <p class="card-text">Our records indicate
+                {{cat.name}}
+                is
+                {{cat.age}}
+                years old.</p>
+              <p class="card-text">{{cat.name}} is </p>
             </div>
           </div>
         </div>

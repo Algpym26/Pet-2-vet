@@ -22,6 +22,7 @@ router.get("/:id", withAuth, async (req, res) => {
   }
 });
 
+// TESTING GET route below for testing
 router.get("/", async (req, res) => {
   console.log("firing");
   try {

@@ -2,10 +2,11 @@ const router = require("express").Router();
 const withAuth = require("../utils/auth");
 const { Owner } = require("../models/");
 
+// tested successfully KT
 router.get("/", withAuth, async (req, res) => {
   try {
     console.log(req.session.logged_in);
-    res.render("homepage");
+    res.render("homepage", { logged_in: req.session.logged_in });
   } catch (err) {
     res.json(err);
   }
@@ -19,14 +20,16 @@ router.get("/locations", withAuth, async (req, res) => {
   }
 });
 
+// tested successfully KT
 router.get("/login", async (req, res) => {
-  try {
-    res.render("loginPage");
-  } catch (err) {
-    res.json(err);
+  if (req.session.logged_in) {
+    res.redirect("/");
+    return;
   }
+  res.render("loginPage");
 });
 
+//tested successfully KT
 router.post("/login", async (req, res) => {
   try {
     console.log(req.body);
