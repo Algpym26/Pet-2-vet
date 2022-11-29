@@ -24,9 +24,27 @@
   color: white;
 }
 
-
 @media (max-width: 767px) {
   .background-image {
     background-attachment: fixed;
   }
+}
+
+#pt-dog-nav {
+  color: white;
+  border-radius: 3px;
+  font-size: large;
+  margin-bottom: 3px;
+}
+#pt-cat-nav {
+  color: white;
+  border-radius: 3px;
+  font-size: large;
+  margin-top: 5px;
+  margin-bottom: 3px;
+}
+
+.pet-card {
+  margin: 2px;
+  background-color: lightgray;
 }

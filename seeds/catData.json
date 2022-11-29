@@ -8,10 +8,25 @@
   },
 
   {
-    "name": "Pynchon",
+    "name": "Meowth",
     "Declawed": true,
-    "age": 8,
+    "age": 12,
     "weight": 16.0,
+    "owner_id": 2
+  },
+  {
+    "name": "Tinsel",
+    "Declawed": true,
+    "age": 7,
+    "weight": 8,
+    "owner_id": 1
+  },
+
+  {
+    "name": "Pynchon",
+    "Declawed": false,
+    "age": 8,
+    "weight": 5.4,
     "owner_id": 2
   }
 ]
