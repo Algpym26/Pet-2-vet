@@ -9,13 +9,13 @@
   background-color: white;
   background-size: 100%;
   background-repeat: no-repeat;
-
-  
 }
 
 .pad {
-    padding: 40px 50px;
-    margin: 10px;
-    font-size: 30px;
-    border-radius: 10px !important;
+  padding: 40px 50px;
+  margin: 100px 40px;
+  font-size: 30px;
+  border-radius: 10px !important;
+
+  color: white;
 }
