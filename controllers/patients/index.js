@@ -1,11 +1,11 @@
 const router = require("express").Router();
 const patientRoutes = require("./patientRoutes");
-const catRoutes = require("./catRoutes");
-const dogRoutes = require("./dogRoutes");
+const petRoutes = require("./petRoutes")
 
-// router.use("/", patientRoutes);
-router.use("/cat", catRoutes);
-router.use("/dog", dogRoutes);
 router.use("/", patientRoutes);
+router.use("/add", petRoutes);
+
+
+
 
 module.exports = router;
