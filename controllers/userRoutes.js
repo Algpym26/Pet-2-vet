@@ -16,10 +16,20 @@ router.get("/", withAuth, async (req, res) => {
 
 router.get("/locations", withAuth, async (req, res) => {
   try {
-    res.render("locationPage");
-  } catch (err) {
-    res.json(err);
-  }
+    console.log(req.session.logged_in)
+    res.render("locationPage", {
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {}
+});
+
+router.get("/services", withAuth, async (req, res) => {
+  try {
+    console.log(req.session.logged_in)
+    res.render("servicesPage", {
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {}
 });
 
 // tested successfully KT
