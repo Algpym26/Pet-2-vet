@@ -11,13 +11,13 @@ const deletePetHandler = (event) => {
 };
 
 document
-  .querySelector("#signup-button")
+  .querySelector("#add-button")
   .addEventListener("click", addPetHandler);
 
 document
-  .querySelector("#signup-button")
+  .querySelector("#update-button")
   .addEventListener("click", updatePetHandler);
 
 document
-  .querySelector("#signup-button")
+  .querySelector("#delete-button")
   .addEventListener("click", deletePetHandler);

@@ -5,7 +5,4 @@ const petRoutes = require("./petRoutes")
 router.use("/", patientRoutes);
 router.use("/add", petRoutes);
 
-
-
-
 module.exports = router;
