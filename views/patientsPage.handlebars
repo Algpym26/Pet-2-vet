@@ -20,11 +20,31 @@
       <h3>My Dogs:</h3>
       {{#each dogs as |dog|}}
         <div class="col">
-          <div class="card">
+          <div class="card w-50">
             <img src="/assets/image.JPG" class="card-img-top" alt="..." />
             <div class="card-body">
-              <h5 class="card-title">My Dog {{dog.name}}</h5>
-              <p class="card-text">Pet information goes here. </p>
+              <h5 class="card-title">Your {{dog.size}} dog, {{dog.name}}.</h5>
+              <p class="card-text">Our records indicate
+                {{dog.name}}
+                is
+                {{dog.age}}
+                years old and weighs
+                {{dog.weight}}
+                pounds.</p>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item"> <b>Name:</b> {{dog.name}}</li>
+                <li class="list-group-item">
+                  <b>Weight:</b>
+                  {{dog.weight}}
+                  lbs</li>
+                <li class="list-group-item">
+                  <b>Breed Size:</b>
+                  {{dog.size}}</li>
+                <li class="list-group-item">
+                  <b>Age:</b>
+                  {{dog.age}}
+                  years old</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -35,16 +55,38 @@
       <h3>My Cats:</h3>
       {{#each cats as |cat|}}
         <div class="col">
-          <div class="card">
+          <div class="card w-50">
             <img src="/assets/catimg3.jpeg" class="card-img-top" alt="..." />
             <div class="card-body">
-              <h5 class="card-title">My Cat {{cat.name}}</h5>
+              <h5 class="card-title">Your Cat, {{cat.name}}</h5>
               <p class="card-text">Our records indicate
                 {{cat.name}}
                 is
                 {{cat.age}}
-                years old.</p>
-              <p class="card-text">{{cat.name}} is </p>
+                years old and weighs
+                {{cat.weight}}
+                pounds.</p>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item"> <b>Name:</b> {{cat.name}}</li>
+                {{#if cat.Declawed}}
+                  <li class="list-group-item">
+                    {{cat.name}}
+                    has been
+                    <b>Declawed</b></li>
+                {{else}}
+                  <li class="list-group-item">{{cat.name}}
+                    is
+                    <b>NOT Declawed</b></li>
+                {{/if}}
+                <li class="list-group-item">
+                  <b>Weight:</b>
+                  {{cat.weight}}
+                  lbs</li>
+                <li class="list-group-item">
+                  <b>Age:</b>
+                  {{cat.age}}
+                  years old</li>
+              </ul>
             </div>
           </div>
         </div>
