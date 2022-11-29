@@ -2,16 +2,18 @@ const router = require("express").Router();
 const withAuth = require("../../../utils/auth");
 const { Cat, Dog, Owner } = require("../../../models");
 
-router.get("/add", withAuth, async (req, res) => {
+router.get("/", withAuth, async (req, res) => {
   console.log("firing");
   try {
-    // res.json(ownerData);
+    res.render("addPetPage", {
+      logged_in: req.session.logged_in,
+    });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-router.post("/add", withAuth, async (req, res) => {
+router.post("/", withAuth, async (req, res) => {
   try {
     //if dog or cat
     const newDog = await Dog.create({});
