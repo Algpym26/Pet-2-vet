@@ -23,8 +23,16 @@
   border-radius: 10px !important;
   color: white;
 }
+.pet-card {
+  margin: 2px;
+  background-color: lightgray;
+  width: 25%;
+}
 
 @media (max-width: 767px) {
+  .pet-card {
+    width: 100%;
+  }
   .background-image {
     background-attachment: fixed;
   }
@@ -42,9 +50,4 @@
   font-size: large;
   margin-top: 5px;
   margin-bottom: 3px;
-}
-
-.pet-card {
-  margin: 2px;
-  background-color: lightgray;
 }
