@@ -33,18 +33,23 @@
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="/">Home</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/patients/{{owner.id}}">Patients</a>
-            </li>
+            {{#if logged_in}}
+              <li class="nav-item">
+                <a class="nav-link" href="/patients">Patients</a>
+              </li>
+            {{/if}}
             <li class="nav-item">
               <a class="nav-link" href="/services">Services</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/locations">Location</a>
             </li>
-            <li class="nav-item">
-              <a id="logout" class="nav-link" href="/login">Logout</a>
-            </li>
+
+            {{#if logged_in}}
+              <li class="nav-item">
+                <a id="logout" class="nav-link" href="/logout">Logout</a>
+              </li>
+            {{/if}}
           </ul>
         </div>
       </div>
