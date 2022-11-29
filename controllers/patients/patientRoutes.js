@@ -22,22 +22,23 @@ router.get("/:id", withAuth, async (req, res) => {
   }
 });
 
-router.get("/", async (req, res) => {
+// TESTING GET route below for testing
+router.get("/", withAuth, async (req, res) => {
   console.log("firing");
   try {
-    const ownerData = await Owner.findAll({
+    const ownerData = await Owner.findByPk(req.session.user_id, {
       include: [{ model: Dog }, { model: Cat }],
     });
+    console.log(ownerData);
+    const dogs = ownerData.Dogs.map((dog) => dog.get({ plain: true }));
+    const cats = ownerData.Cats.map((cat) => cat.get({ plain: true }));
 
-    // const dogs = ownerData.Dog.map((dog) => dog.get({ plain: true }));
-    // const cats = ownerData.Cat.map((cat) => cat.get({ plain: true }));
-
-    // res.render("patientsPage", {
-    //   dogs,
-    //   cats,
-    //   logged_in: req.session.logged_in,
-    // });
-    res.json(ownerData);
+    res.render("patientsPage", {
+      dogs,
+      cats,
+      logged_in: req.session.logged_in,
+    });
+    // res.json(ownerData);
   } catch (err) {
     res.status(500).json(err);
   }
