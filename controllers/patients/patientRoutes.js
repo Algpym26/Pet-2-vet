@@ -2,29 +2,9 @@ const router = require("express").Router();
 const { Cat, Dog, Owner } = require("../../models");
 const withAuth = require("../../utils/auth");
 
-router.get("/:id", withAuth, async (req, res) => {
-  console.log("firing");
-  try {
-    const ownerData = await Owner.findByPk(req.params.id, {
-      include: [{ model: Dog }, { model: Cat }],
-    });
-
-    const dogs = ownerData.Dogs.map((dog) => dog.get({ plain: true }));
-    const cats = ownerData.Cats.map((cat) => cat.get({ plain: true }));
-
-    res.render("patientsPage", {
-      dogs,
-      cats,
-      logged_in: req.session.logged_in,
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
 // TESTING GET route below for testing
 router.get("/", withAuth, async (req, res) => {
-  console.log("firing");
+  console.log("firing patient");
   try {
     const ownerData = await Owner.findByPk(req.session.user_id, {
       include: [{ model: Dog }, { model: Cat }],
