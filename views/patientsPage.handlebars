@@ -14,83 +14,98 @@
 </div>
 
 <div class="container-fluid">
-  <div class="row row-cols-1 row-cols-md-2 g-4">
-    {{! if each to loop over all dogs for logged in owner }}
-    {{#if dogs.length}}
-      <h3>My Dogs:</h3>
+  {{! <div class="row row-cols-1 row-cols-md-2 g-4"> }}
+  {{! if each to loop over all dogs for logged in owner }}
+  {{#if dogs.length}}
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-primary"
+      id="pt-dog-nav"
+    >
+      <div class="container">
+        <b>MY DOGS</b>>
+      </div>
+    </nav>
+    <div class="row">
       {{#each dogs as |dog|}}
-        <div class="col">
-          <div class="card w-50">
-            <img src="/assets/image.JPG" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">Your {{dog.size}} dog, {{dog.name}}.</h5>
-              <p class="card-text">Our records indicate
-                {{dog.name}}
-                is
-                {{dog.age}}
-                years old and weighs
+
+        <div class="card w-25 pet-card">
+          <img src="/assets/image.JPG" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">Your {{dog.size}} dog, {{dog.name}}.</h5>
+            <p class="card-text">Our records indicate
+              {{dog.name}}
+              is
+              {{dog.age}}
+              years old and weighs
+              {{dog.weight}}
+              pounds.</p>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"> <b>Name:</b> {{dog.name}}</li>
+              <li class="list-group-item">
+                <b>Weight:</b>
                 {{dog.weight}}
-                pounds.</p>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item"> <b>Name:</b> {{dog.name}}</li>
-                <li class="list-group-item">
-                  <b>Weight:</b>
-                  {{dog.weight}}
-                  lbs</li>
-                <li class="list-group-item">
-                  <b>Breed Size:</b>
-                  {{dog.size}}</li>
-                <li class="list-group-item">
-                  <b>Age:</b>
-                  {{dog.age}}
-                  years old</li>
-              </ul>
-            </div>
+                lbs</li>
+              <li class="list-group-item">
+                <b>Breed Size:</b>
+                {{dog.size}}</li>
+              <li class="list-group-item">
+                <b>Age:</b>
+                {{dog.age}}
+                years old</li>
+            </ul>
           </div>
         </div>
+
       {{/each}}
-    {{/if}}
-    {{! if each to loop over all cats for logged in owner }}
-    {{#if cats.length}}
-      <h3>My Cats:</h3>
+    </div>
+  {{/if}}
+  {{! if each to loop over all cats for logged in owner }}
+  {{#if cats.length}}
+    <nav class="navbar navbar-expand-lg navbar-light bg-info" id="pt-cat-nav">
+      <div class="container">
+        <b>MY CATS</b>>
+      </div>
+    </nav>
+    <div class="row">
       {{#each cats as |cat|}}
-        <div class="col">
-          <div class="card w-50">
-            <img src="/assets/catimg3.jpeg" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">Your Cat, {{cat.name}}</h5>
-              <p class="card-text">Our records indicate
-                {{cat.name}}
-                is
-                {{cat.age}}
-                years old and weighs
+
+        <div class="card w-25 pet-card">
+          <img src="/assets/catimg3.jpeg" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">Your Cat, {{cat.name}}</h5>
+            <p class="card-text">Our records indicate
+              {{cat.name}}
+              is
+              {{cat.age}}
+              years old and weighs
+              {{cat.weight}}
+              pounds.</p>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"> <b>Name:</b> {{cat.name}}</li>
+              {{#if cat.Declawed}}
+                <li class="list-group-item">
+                  {{cat.name}}
+                  has been
+                  <b>Declawed</b></li>
+              {{else}}
+                <li class="list-group-item">{{cat.name}}
+                  is
+                  <b>NOT Declawed</b></li>
+              {{/if}}
+              <li class="list-group-item">
+                <b>Weight:</b>
                 {{cat.weight}}
-                pounds.</p>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item"> <b>Name:</b> {{cat.name}}</li>
-                {{#if cat.Declawed}}
-                  <li class="list-group-item">
-                    {{cat.name}}
-                    has been
-                    <b>Declawed</b></li>
-                {{else}}
-                  <li class="list-group-item">{{cat.name}}
-                    is
-                    <b>NOT Declawed</b></li>
-                {{/if}}
-                <li class="list-group-item">
-                  <b>Weight:</b>
-                  {{cat.weight}}
-                  lbs</li>
-                <li class="list-group-item">
-                  <b>Age:</b>
-                  {{cat.age}}
-                  years old</li>
-              </ul>
-            </div>
+                lbs</li>
+              <li class="list-group-item">
+                <b>Age:</b>
+                {{cat.age}}
+                years old</li>
+            </ul>
           </div>
         </div>
+
       {{/each}}
-    {{/if}}
-  </div>
+    </div>
+  {{/if}}
+  {{! </div> }}
 </div>
