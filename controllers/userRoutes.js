@@ -6,7 +6,9 @@ const { Owner } = require("../models/");
 router.get("/", withAuth, async (req, res) => {
   try {
     console.log(req.session.logged_in);
-    res.render("homepage", { logged_in: req.session.logged_in });
+    res.render("homepage", {
+      logged_in: req.session.logged_in,
+    });
   } catch (err) {
     res.json(err);
   }
