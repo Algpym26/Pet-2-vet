@@ -1,11 +1,11 @@
 const router = require("express").Router();
 const withAuth = require("../../../utils/auth");
-const { Cat, Dog, Owner } = require("../../../models");
+const { Dog, Owner } = require("../../../models");
 
 router.get("/", withAuth, async (req, res) => {
-  console.log("firing");
+  console.log("firing pet page get request");
   try {
-    res.render("addPetPage", {
+    res.render("addDogPage", {
       logged_in: req.session.logged_in,
     });
   } catch (err) {
