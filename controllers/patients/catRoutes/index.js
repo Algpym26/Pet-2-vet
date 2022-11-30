@@ -13,4 +13,20 @@ router.get("/", withAuth, async (req, res) => {
   }
 });
 
+router.post("/", withAuth, async (req, res) => {
+  console.log("cat post route firing");
+  console.log(req.body);
+  console.log(req.session);
+  try {
+    const newCat = await Cat.create({
+      ...req.body,
+      logged_in: req.session.logged_in,
+      owner_id: req.session.user_id,
+    });
+    res.status(200).json(newCat);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;
