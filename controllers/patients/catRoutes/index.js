@@ -23,6 +23,7 @@ router.post("/", withAuth, async (req, res) => {
       logged_in: req.session.logged_in,
       owner_id: req.session.user_id,
     });
+    console.log(newCat);
     res.status(200).json(newCat);
   } catch (err) {
     res.status(500).json(err);
