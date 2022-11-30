@@ -1,11 +1,11 @@
 <form class="w-50 container-lg px-4 mt-4">
   <div class="form-group">
     <label for="exampleFormControlInput1">Dog Name</label>
-    <input type="email" class="form-control" id="exampleFormControlInput1" />
+    <input type="email" class="form-control" id="name" />
   </div>
   <div class="form-group">
     <label for="exampleFormControlSelect1">Dog Size (Please Select One)</label>
-    <select class="form-control" id="exampleFormControlSelect1">
+    <select class="form-control" id="size">
       <option>Small</option>
       <option>Medium</option>
       <option>Large</option>
@@ -13,12 +13,18 @@
   </div>
   <div class="form-group">
     <label for="exampleFormControlInput1">Dog Age</label>
-    <input type="email" class="form-control" id="exampleFormControlInput1" />
+    <input type="email" class="form-control" id="age" />
   </div>
   <div class="form-group">
     <label for="exampleFormControlInput1">Dog Weight (in lbs)</label>
-    <input type="email" class="form-control" id="exampleFormControlInput1" />
+    <input type="email" class="form-control" id="weight" />
   </div>
+  <button
+    id="submit-dog-button"
+    class="btn mt-2 btn-secondary btn-lg"
+    type="button"
+  >Add Now</button>
+
   {{! <div class="form-group">
     <label for="exampleFormControlSelect1">Example select</label>
     <select class="form-control" id="exampleFormControlSelect1">

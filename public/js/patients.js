@@ -1,27 +1,60 @@
-const addPetHandler = async (event) => {
-  //   //   event.preventDefault();
-  //   const response = await fetch("/patients/add");
-  //   //   {
-  //   //     method: "GET",
-  //   //     body: JSON.stringify({ email, password }),
-  //   //     headers: { "Content-Type": "application/json" },
-  //   //   });
-  //   if (response.ok) {
-  //     document.location.replace("/patients/add");
-  //   } else {
-  //     alert(response.statusText);
-  //   }
-};
-
-const updatePetHandler = (event) => {
+const addDogHandler = async (event) => {
   event.preventDefault();
+
+  const name = document.querySelector("#name").value.trim();
+  const size = document.querySelector("#size").value.trim();
+  const age = document.querySelector("#age").value.trim();
+  const weight = document.querySelector("#weight").value.trim();
+
+  const response = await fetch("/patients/add-dog", {
+    method: "POST",
+    body: JSON.stringify({ name, size, age, weight }),
+    headers: { "Content-Type": "application/json" },
+  });
+  if (response.ok) {
+    document.location.replace("/patients");
+  } else {
+    alert(response.statusText);
+  }
 };
 
-const deletePetHandler = (event) => {
+const addCatHandler = async (event) => {
   event.preventDefault();
+
+  const name = document.querySelector("#name").value.trim();
+  const declawed = document.querySelector("#declawed").value.trim();
+  const age = document.querySelector("#age").value.trim();
+  const weight = document.querySelector("#weight").value.trim();
+
+  const response = await fetch("/patients/add-cat", {
+    method: "POST",
+    body: JSON.stringify({ name, declawed, age, weight }),
+    headers: { "Content-Type": "application/json" },
+  });
+  if (response.ok) {
+    document.location.replace("/patients");
+  } else {
+    alert(response.statusText);
+  }
 };
 
-// document.querySelector("#add-button").addEventListener("click", addPetHandler);
+
+
+// const updatePetHandler = (event) => {
+//   event.preventDefault();
+// };
+
+// const deletePetHandler = (event) => {
+//   event.preventDefault();
+// };
+
+document
+  .querySelector("#submit-dog-button")
+  .addEventListener("click", addDogHandler);
+
+  document
+  .querySelector("#submit-cat-button")
+  .addEventListener("click", addCatHandler);
 
 // document
 //   .querySelector("#update-button")
