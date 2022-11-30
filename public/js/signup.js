@@ -22,7 +22,7 @@ const signUpFormHandler = async (event) => {
     console.log("fetch request firing in signup.js");
 
     if (response.ok) {
-      console.log("response ok")
+      console.log("response ok");
       // If successful, redirect the browser to the profile page
       document.location.replace("/");
     } else {
