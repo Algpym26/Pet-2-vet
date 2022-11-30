@@ -4,6 +4,33 @@
   object-fit: cover;
 }
 
+#add-dog-button {
+  background-color: #0275d8;
+  border-color: white;
+}
+
+#add-cat-button {
+  background-color: #5bc0de;
+  border-color: white;
+}
+
+#add-cat-button:hover {
+  background-color: #5cb85c;
+  border-color: white;
+}
+#add-dog-button:hover {
+  background-color: #5cb85c;
+  border-color: white;
+}
+.delete-button {
+  margin: 3px;
+  align-self: center;
+}
+.delete-button:hover {
+  background-color: #d9534f;
+  border-color: white;
+}
+
 .background-image {
   background-image: url("/assets/image.JPG");
 
@@ -27,6 +54,9 @@
   margin: 2px;
   background-color: lightgray;
   width: 25%;
+}
+.card-lower-box {
+  border-radius: 2px;
 }
 
 @media (max-width: 767px) {
