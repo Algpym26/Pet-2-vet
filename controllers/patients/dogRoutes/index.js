@@ -13,15 +13,20 @@ router.get("/", withAuth, async (req, res) => {
   }
 });
 
-// router.post("/", withAuth, async (req, res) => {
-//   try {
-//     //if dog or cat
-//     const newDog = await Dog.create({});
-//     const newCat = await Dog.create({});
-//     res.status(200).json(newProject);
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
+router.post("/", withAuth, async (req, res) => {
+  console.log("dog post route firing")
+  console.log(req.body)
+  console.log(req.session)
+  try {
+    const newDog = await Dog.create({
+      ...req.body,
+      logged_in: req.session.logged_in,
+      owner_id: req.session.user_id,
+    });
+    res.status(200).json(newDog);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 module.exports = router;
