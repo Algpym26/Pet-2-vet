@@ -1,7 +1,7 @@
 [
   {
     "name": "Brina",
-    "size": "small",
+    "size": "Small",
     "age": 7,
     "weight": 25.0,
     "owner_id": 1
@@ -9,14 +9,14 @@
 
   {
     "name": "Missy",
-    "size": "large",
+    "size": "Large",
     "age": 10,
     "weight": 45,
     "owner_id": 2
   },
   {
     "name": "Lily",
-    "size": "x-small",
+    "size": "Small",
     "age": 4,
     "weight": 13,
     "owner_id": 1
@@ -24,9 +24,16 @@
 
   {
     "name": "Cooper",
-    "size": "x-large",
+    "size": "Medium",
+    "age": 6,
+    "weight": 45,
+    "owner_id": 1
+  },
+  {
+    "name": "Cerberus",
+    "size": "Large",
     "age": 5,
     "weight": 125,
-    "owner_id": 2
+    "owner_id": 1
   }
 ]
