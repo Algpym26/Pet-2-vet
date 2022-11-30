@@ -23,7 +23,7 @@ Cat.init(
       allowNull: false,
     },
 
-    Declawed: {
+    declawed: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
     },

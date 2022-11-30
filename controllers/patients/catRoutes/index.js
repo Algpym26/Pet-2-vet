@@ -16,7 +16,7 @@ router.get("/", withAuth, async (req, res) => {
 router.post("/", withAuth, async (req, res) => {
   console.log("cat post route firing");
   console.log(req.body);
-  console.log(req.session);
+  // console.log(req.session);
   try {
     const newCat = await Cat.create({
       ...req.body,
