@@ -30,4 +30,26 @@ router.post("/", withAuth, async (req, res) => {
   }
 });
 
+// KT testing DELETE cat route
+
+router.delete("/:id", withAuth, async (req, res) => {
+  try {
+    const catData = await Cat.destroy({
+      where: {
+        id: req.params.id,
+        owner_id: req.session.user_id,
+      },
+    });
+
+    if (!catData) {
+      res.status(404).json({ message: "No Cat found with this id!" });
+      return;
+    }
+
+    res.status(200).json(catData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;

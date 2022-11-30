@@ -14,13 +14,6 @@
     "weight": 45,
     "owner_id": 2
   },
-  {
-    "name": "Lily",
-    "size": "Small",
-    "age": 4,
-    "weight": 13,
-    "owner_id": 1
-  },
 
   {
     "name": "Cooper",
@@ -34,6 +27,13 @@
     "size": "Large",
     "age": 5,
     "weight": 125,
+    "owner_id": 1
+  },
+  {
+    "name": "Lily",
+    "size": "Small",
+    "age": 4,
+    "weight": 13,
     "owner_id": 1
   }
 ]

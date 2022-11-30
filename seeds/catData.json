@@ -1,7 +1,7 @@
 [
   {
     "name": "Cormac",
-    "Declawed": false,
+    "declawed": false,
     "age": 7,
     "weight": 14.5,
     "owner_id": 1
@@ -9,14 +9,14 @@
 
   {
     "name": "Meowth",
-    "Declawed": true,
+    "declawed": true,
     "age": 12,
     "weight": 16.0,
     "owner_id": 2
   },
   {
     "name": "Tinsel",
-    "Declawed": true,
+    "declawed": true,
     "age": 7,
     "weight": 8,
     "owner_id": 1
@@ -24,7 +24,7 @@
 
   {
     "name": "Pynchon",
-    "Declawed": false,
+    "declawed": false,
     "age": 8,
     "weight": 5.4,
     "owner_id": 2
