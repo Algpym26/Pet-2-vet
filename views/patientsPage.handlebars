@@ -1,22 +1,13 @@
 <div class="p-5 mb-4 bg-light rounded-3">
   <div class="container-fluid py-5">
-    <h1 class="display-1 fw-bold">View and Update Your Pets</h1>
+    <h1 class="display-1 fw-bold">View and Update Your Pets.</h1>
     <p class="col-md-8 fs-4">Help us keep track of your pets by ensuring our system is up to date with the latest information on your Cats and Dogs. </p>
     <p>Need to update a pet's information? Click below.</p>
-    <a href="/patients/add-dog"<button id="add-dog-button" class="btn btn-secondary btn-lg" type="button">Add a
+    <a href="/patients/add-dog"<button id="add-dog-button" class="btn btn-secondary btn-lg" type="button">Add
       Dog</button></a>
-      <a href="/patients/add-cat"<button id="add-cat-button" class="btn btn-secondary btn-lg" type="button">Add a
+      <a href="/patients/add-cat"<button id="add-cat-button" class="btn btn-secondary btn-lg" type="button">Add
       Cat</button></a>
-    <a href="#"<button
-      id="update-button"
-      class="btn btn-secondary btn-lg"
-      type="button"
-    >Update a Pet</button></a>
-    <a href="#"<button
-      id="delete-button"
-      class="btn btn-secondary btn-lg"
-      type="button"
-    >Delete a Pet</button></a>
+    
 
   </div>
 </div>
@@ -61,7 +52,7 @@
                 years old</li>
             </ul>
             <a href="#"<button
-      class="btn btn-secondary btn-lg delete-button"
+      class="btn btn-secondary btn-lg delete-button dog-delete"
       type="button" data-id="{{dog.id}}"
     >Delete Dog</button></a>
           </div>
@@ -113,7 +104,7 @@
                 years old</li>
             </ul>
             <a href="#"<button
-      class="btn btn-secondary btn-lg delete-button"
+      class="btn btn-secondary btn-lg delete-button cat-delete"
       type="button" data-id="{{cat.id}}"
     >Delete Cat</button></a>
           </div>

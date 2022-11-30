@@ -4,12 +4,14 @@
   object-fit: cover;
 }
 
-#add-dog-button {
+#add-dog-button,
+.dog-delete {
   background-color: #0275d8;
   border-color: white;
 }
 
-#add-cat-button {
+#add-cat-button,
+.cat-delete {
   background-color: #5bc0de;
   border-color: white;
 }
