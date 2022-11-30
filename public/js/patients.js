@@ -1,27 +1,34 @@
-const addPetHandler = async (event) => {
-  //   //   event.preventDefault();
-  //   const response = await fetch("/patients/add");
-  //   //   {
-  //   //     method: "GET",
-  //   //     body: JSON.stringify({ email, password }),
-  //   //     headers: { "Content-Type": "application/json" },
-  //   //   });
-  //   if (response.ok) {
-  //     document.location.replace("/patients/add");
-  //   } else {
-  //     alert(response.statusText);
-  //   }
-};
-
-const updatePetHandler = (event) => {
+const addDogHandler = async (event) => {
   event.preventDefault();
+
+  const name = document.querySelector("#name").value.trim();
+  const size = document.querySelector("#size").value.trim();
+  const age = document.querySelector("#age").value.trim();
+  const weight = document.querySelector("#weight").value.trim();
+
+  const response = await fetch("/patients/add", {
+    method: "POST",
+    body: JSON.stringify({ name, size, age, weight }),
+    headers: { "Content-Type": "application/json" },
+  });
+  if (response.ok) {
+    document.location.replace("/patients");
+  } else {
+    alert(response.statusText);
+  }
 };
 
-const deletePetHandler = (event) => {
-  event.preventDefault();
-};
+// const updatePetHandler = (event) => {
+//   event.preventDefault();
+// };
 
-// document.querySelector("#add-button").addEventListener("click", addPetHandler);
+// const deletePetHandler = (event) => {
+//   event.preventDefault();
+// };
+
+document
+  .querySelector("#submit-dog-button")
+  .addEventListener("click", addPetHandler);
 
 // document
 //   .querySelector("#update-button")
