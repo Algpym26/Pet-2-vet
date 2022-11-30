@@ -6,7 +6,7 @@ const addDogHandler = async (event) => {
   const age = document.querySelector("#age").value.trim();
   const weight = document.querySelector("#weight").value.trim();
 
-  const response = await fetch("/patients/add", {
+  const response = await fetch("/patients/add-dog", {
     method: "POST",
     body: JSON.stringify({ name, size, age, weight }),
     headers: { "Content-Type": "application/json" },
@@ -28,7 +28,7 @@ const addDogHandler = async (event) => {
 
 document
   .querySelector("#submit-dog-button")
-  .addEventListener("click", addPetHandler);
+  .addEventListener("click", addDogHandler);
 
 // document
 //   .querySelector("#update-button")
