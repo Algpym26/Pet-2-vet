@@ -21,9 +21,11 @@ async function sendEmail(name, email) {
   let info = await transporter.sendMail({
     from: '"The Vets" <Pet2Vet@example.com>', // sender address
     to: `${email}`, // list of receivers
-    subject: `Hi, ${name} Welcome to Pet2Vet!`, // Subject line
+    subject: `Hi, ${name}! Welcome to Pet2Vet`, // Subject line
     text: `Hi, ${name} Welcome to Pet2Vet!`, // plain text body
-    html: `<b>Hi, ${name} Welcome to Pet2Vet!</b>`, // html body
+    html: `<h1> Congratulations,  ${name}! </h1>.
+    <h2>You are now signed up for Pet2Vet.</h2>
+    <h3>Use our application to share your pets with our vets.</h3>`, // html body
   });
 
   console.log("Message sent: %s", info.messageId);
