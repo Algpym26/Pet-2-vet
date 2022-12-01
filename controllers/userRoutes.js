@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const withAuth = require("../utils/auth");
 const { Owner } = require("../models/");
+const sendEmail = require("../utils/sendEmail");
 
 // tested successfully KT
 router.get("/", withAuth, async (req, res) => {
@@ -16,7 +17,7 @@ router.get("/", withAuth, async (req, res) => {
 
 router.get("/locations", withAuth, async (req, res) => {
   try {
-    console.log(req.session.logged_in)
+    console.log(req.session.logged_in);
     res.render("locationPage", {
       logged_in: req.session.logged_in,
     });
@@ -25,7 +26,7 @@ router.get("/locations", withAuth, async (req, res) => {
 
 router.get("/services", withAuth, async (req, res) => {
   try {
-    console.log(req.session.logged_in)
+    console.log(req.session.logged_in);
     res.render("servicesPage", {
       logged_in: req.session.logged_in,
     });
@@ -78,28 +79,17 @@ router.post("/login", async (req, res) => {
 router.post("/signup", async (req, res) => {
   console.log("signup post request working");
   try {
-    // const ownerEmail = await Owner.findOne({
-    //   where: { email: req.body.email },
-    // });
-    // console.log(ownerEmail)
-
-    // if (ownerEmail) {
-    //   console.log("owner email found already");
-    //   res
-    //     .status(400)
-    //     .json({ message: "An account with this email exists already." });
-    //   return;
-    // } else {
-    //   console.log("email not found, go ahead with sign up");
-    // }
     console.log(req.body);
     const ownerData = await Owner.create(req.body);
     console.log(ownerData);
+    const url = await sendEmail(req.body.name, req.body.email);
+    console.log(url);
     req.session.save(() => {
       console.log("session saving");
       req.session.owner_id = ownerData.id;
       req.session.logged_in = true;
-
+      ownerData.dataValues.url = url;
+      console.log(ownerData);
       res.status(200).json(ownerData);
     });
   } catch (err) {
