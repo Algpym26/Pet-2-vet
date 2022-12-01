@@ -5,7 +5,7 @@ const withAuth = require("../../utils/auth");
 // TESTING GET route below for testing
 router.get("/", withAuth, async (req, res) => {
   console.log("firing patient");
-  console.log(req.session);
+
   try {
     const ownerData = await Owner.findByPk(req.session.owner_id, {
       include: [{ model: Dog }, { model: Cat }],
@@ -19,7 +19,6 @@ router.get("/", withAuth, async (req, res) => {
       cats,
       logged_in: req.session.logged_in,
     });
-    // res.json(ownerData);
   } catch (err) {
     res.status(500).json(err);
   }
