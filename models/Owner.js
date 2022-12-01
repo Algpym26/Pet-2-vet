@@ -56,7 +56,7 @@ Owner.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "owner",
+    modelName: "Owner",
   }
 );
 

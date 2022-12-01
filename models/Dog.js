@@ -48,7 +48,7 @@ Dog.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "dog",
+    modelName: "Dog",
   }
 );
 
