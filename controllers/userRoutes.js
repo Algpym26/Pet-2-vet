@@ -86,7 +86,7 @@ router.post("/signup", async (req, res) => {
     console.log(url);
     req.session.save(() => {
       console.log("session saving");
-      req.session.owner_id = ownerData.id;
+      req.session.user_id = ownerData.id;
       req.session.logged_in = true;
       ownerData.dataValues.url = url;
       console.log(ownerData);
