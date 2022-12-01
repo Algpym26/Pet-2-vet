@@ -55,10 +55,33 @@
 .pet-card {
   margin: 2px;
   background-color: lightgray;
-  width: 25%;
+  width: 24%;
 }
 .card-lower-box {
   border-radius: 2px;
+}
+
+.services {
+  width: 50%;
+}
+
+.divide {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .pet-card {
+    width: 49%;
+  }
+  .background-image {
+    background-attachment: fixed;
+  }
+  .services {
+    width: 100%;
+  }
 }
 
 @media (max-width: 767px) {
@@ -67,6 +90,9 @@
   }
   .background-image {
     background-attachment: fixed;
+  }
+  .services {
+    width: 100%;
   }
 }
 
