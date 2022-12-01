@@ -7,7 +7,7 @@ router.get("/", withAuth, async (req, res) => {
   console.log("firing patient");
 
   try {
-    const ownerData = await Owner.findByPk(req.session.owner_id, {
+    const ownerData = await Owner.findByPk(req.session.user_id, {
       include: [{ model: Dog }, { model: Cat }],
     });
     console.log(ownerData);

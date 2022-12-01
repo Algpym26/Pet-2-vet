@@ -53,7 +53,7 @@ Cat.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "Cat",
+    modelName: "cat",
   }
 );
 
