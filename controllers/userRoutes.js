@@ -3,7 +3,6 @@ const withAuth = require("../utils/auth");
 const { Owner } = require("../models/");
 const sendEmail = require("../utils/sendEmail");
 
-// tested successfully KT
 router.get("/", withAuth, async (req, res) => {
   try {
     console.log(req.session.logged_in);
@@ -33,7 +32,6 @@ router.get("/services", withAuth, async (req, res) => {
   } catch (err) {}
 });
 
-// tested successfully KT
 router.get("/login", async (req, res) => {
   if (req.session.logged_in) {
     res.redirect("/");
@@ -42,7 +40,6 @@ router.get("/login", async (req, res) => {
   res.render("loginPage");
 });
 
-//tested successfully KT
 router.post("/login", async (req, res) => {
   try {
     console.log(req.body);
