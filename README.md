@@ -21,7 +21,8 @@ It address the need for pet owners to be able to find a care provider for their 
 We learned a great deal about the need for communication. A project becomes much more manageable when everyone has a specific task to focus on.  
 
 ## Installation
-Required packages can be acquired by running an npm install
+Required packages can be acquired by running an npm install.
+Also make sure to run npm -i nodemailer to enable the user to be contacted by email after signing up.
 
 ## Usage
 The application is web based and requires the user to be logged in with credentials to see of of the site pages or use its features. Upon the creation of an account or logging in the user is presented with the homepage. 
